@@ -1,0 +1,5 @@
+const KEY='leonida-platinum-progress-v1';
+export function loadState(trophies){try{const raw=JSON.parse(localStorage.getItem(KEY)||'{}');return{earned:new Set(Array.isArray(raw.earned)?raw.earned:[]),counts:raw.counts&&typeof raw.counts==='object'?raw.counts:{},spoilers:raw.spoilers!==false}}catch{return{earned:new Set(),counts:{},spoilers:true}}}
+export function saveState(state){localStorage.setItem(KEY,JSON.stringify({earned:[...state.earned],counts:state.counts,spoilers:state.spoilers}))}
+export function exportState(state){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({earned:[...state.earned],counts:state.counts,spoilers:state.spoilers},null,2)],{type:'application/json'}));a.download='leonida-platinum-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+export async function importState(file){const value=JSON.parse(await file.text());if(!value||!Array.isArray(value.earned))throw Error('This is not a Leonida progress file.');return{earned:new Set(value.earned),counts:value.counts&&typeof value.counts==='object'?value.counts:{},spoilers:value.spoilers!==false}}

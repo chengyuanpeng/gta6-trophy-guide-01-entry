@@ -1,25 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111411"><title>Leonida Platinum — GTA VI Trophy Guide</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="counters.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
-</header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
-</div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
-<script type="module" src="app.js"></script>
-</body>
-</html>
+<header class="topbar"><a class="brand" href="#" aria-label="Leonida Platinum home"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 5h20l-2 19 10 10v5H6v-5l10-10zM19 12l2 10-7 9h20l-7-9 2-10z"/><path d="M17 43h14M24 39v4"/></svg><span>LEONIDA <b>PLATINUM</b><small>FIELD GUIDE / PS5 TROPHY LOG</small></span></a><div class="top-actions"><span class="offline"><i></i> OFFLINE READY</span><button id="spoiler" class="quiet" type="button">Spoilers: <b>ON</b></button></div></header>
+<main>
+<section class="hero"><div><p class="eyebrow">GRAND THEFT AUTO VI <span>•</span> 55 TROPHIES</p><h1>Your road to<br><em>Leonida Legend.</em></h1><p class="intro">A field guide for every trophy. Log your progress, follow the six stage route, and keep story surprises under wraps.</p></div><div class="platinum-card"><div class="ring"><span id="pct">0%</span></div><div><strong id="progress">0 / 55</strong><small>PLATINUM PROGRESS</small><div class="grade-totals" id="gradeTotals"></div></div></div></section>
+<nav class="tabs" aria-label="Views"><button class="tab active" data-view="tracker">Trophy log <span>55</span></button><button class="tab" data-view="roadmap">Roadmap <span>06</span></button></nav>
+<section id="trackerView"><div class="toolbar"><div class="filters" id="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="story">Story</button><button class="filter" data-filter="missable">Missable</button><button class="filter" data-filter="collectibles">Collectibles</button><button class="filter" data-filter="activities">Activities</button><button class="filter" data-filter="online">Online</button><button class="filter" data-filter="earned">Earned</button><button class="filter" data-filter="remaining">Remaining</button></div><label class="search">⌕ <input id="search" placeholder="Search trophy log" autocomplete="off"></label></div><div class="layout"><section class="list-panel"><div class="list-head"><span>CHECKLIST</span><span id="shown">55 RECORDS</span></div><div id="rows"></div></section><aside class="detail" id="detail"><div class="empty-detail"><span class="crosshair">✳</span><h2>Select a trophy</h2><p>Open any record to read its requirement and field notes.</p></div></aside></div></section>
+<section id="roadmapView" hidden></section>
+<footer><span>LEONIDA PLATINUM</span><span>LOCAL PROGRESS SAVED IN THIS BROWSER</span><div class="io"><button id="export" type="button">↥ Export progress</button><label>↧ Import progress<input id="import" type="file" accept="application/json"></label></div></footer>
+</main><script type="module" src="src/main.js"></script></body></html>
